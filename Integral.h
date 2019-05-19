@@ -1,4 +1,6 @@
 #pragma once
+#include <stdio.h>
+#include <math.h>
 class Integral
 {
 private:
@@ -12,6 +14,9 @@ public:
 	double Rectangle(double(&Function)(double));
 	double Rectangle(double(&Function)(double), int N, double a, double b);
 	
+	double Rectangle(double(&Function1)(double), double(&Function2)(double));
+	double Rectangle(double(&Function1)(double), double(&Function2)(double), int N, double a, double b);
+
 	Integral();
 	Integral(int N, double a, double b);
 	~Integral();
