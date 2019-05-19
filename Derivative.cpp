@@ -1,5 +1,15 @@
 #include "Derivative.h"
 
+double Derivative::getDerivative1(double(&Function)(double), double x)
+{
+	return (Function(x + h) - Function(x)) / h;
+}
+
+double Derivative::getDerivative2(double(&Function)(double), double x)
+{
+	return (Function(x + h) - 2 * Function(x) + Function(x - h)) / (h * h);
+}
+
 double Derivative::getDerivative1(double(&Function)(double, double), double x1, double x2, int i)
 {
 	switch (i)
