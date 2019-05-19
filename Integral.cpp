@@ -12,7 +12,7 @@ void Integral::setStep(int N, double a, double b)
 	_step = (_b - _a) / _N;
 }
 
-double Integral::Rectangle(double(&Function)(double), double x)
+double Integral::Rectangle(double(&Function)(double))
 {
 	double Sum = 0;
 	double X = _a + 0.5 * _step;
@@ -24,7 +24,7 @@ double Integral::Rectangle(double(&Function)(double), double x)
 	return Sum * _step;
 }
 
-double Integral::Rectangle(double(&Function)(double), double x, int N, double a, double b)
+double Integral::Rectangle(double(&Function)(double), int N, double a, double b)
 {
 	setStep(N, a, b);
 	double Sum = 0;
@@ -37,6 +37,10 @@ double Integral::Rectangle(double(&Function)(double), double x, int N, double a,
 	return Sum * _step;
 }
 
+
+Integral::Integral()
+{
+}
 
 Integral::Integral(int N, double a, double b)
 {
