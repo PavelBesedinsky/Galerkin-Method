@@ -1,5 +1,10 @@
 #pragma once
 #include "Funcs.h"
+double Lf(double x)
+{
+	return fLU(x);
+}
+
 double L11(double x)
 {
 	return U1(x) * LU1(x);
@@ -68,7 +73,22 @@ double L44(double x)
 	return U4(x) * LU4(x);
 }
 
-double Lf(double x)
+double ULf1(double x)
 {
-	return fLU(x);
+	return U1(x) * Lf(x);
+}
+
+double ULf2(double x)
+{
+	return U2(x) * Lf(x);
+}
+
+double ULf3(double x)
+{
+	return U3(x) * Lf(x);
+}
+
+double ULf4(double x)
+{
+	return U4(x) * Lf(x);
 }
